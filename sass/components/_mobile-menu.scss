@@ -1,0 +1,157 @@
+.menu-btn {
+  position: relative;
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+/**
+  |============================
+  | Робота з іконками відкриття/закриття
+  | кнопки мобільного меню
+  |============================
+*/
+.icon-open {
+  opacity: 1;
+}
+.menu-btn.is-open .icon-open {
+  opacity: 0;
+}
+
+.icon-close {
+  opacity: 0;
+}
+.menu-btn.is-open .icon-close {
+  opacity: 1;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  transform: translateX(100%);
+
+  display: flex;
+  flex-direction: column;
+  padding: 48px 40px;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #fff;
+
+  transition: transform 400ms ease-in;
+}
+
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+.mobile-menu-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.mobile-menu-nav {
+  margin-bottom: auto;
+
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: 0.02em;
+
+  color: #212121;
+
+  .mobile-menu-item {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .mobile-menu-link {
+    color: currentColor;
+  }
+}
+
+.mobile-menu-contacts {
+  margin-bottom: 64px;
+
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+
+  color: #757575;
+
+  .mobile-menu-item {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    &:first-child {
+      .mobile-menu-link {
+        color: #2196f3;
+
+        @media screen and (min-width: 480px) {
+          font-size: 34px;
+        }
+      }
+    }
+  }
+
+  .mobile-menu-link {
+    color: currentColor;
+  }
+}
+
+.mobile-menu-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+
+  color: #2196f3;
+
+  .mobile-menu-link {
+    color: currentColor;
+  }
+
+  .mobile-menu-social {
+    &:not(:last-child) {
+      padding-right: 10px;
+
+      border-right: 1px solid rgba(33, 33, 33, 0.2);
+    }
+  }
+}
